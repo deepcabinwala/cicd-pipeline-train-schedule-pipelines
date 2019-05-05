@@ -2,18 +2,20 @@
 
 pipeline {
     agent any
-    stage('Buid') {
-      step {
-        script {
-          sh "./gradlew build"
+    stages {
+        stage('Buid') {
+          step {
+            script {
+              sh "./gradlew build"
+            }
+          }
         }
-      }
-    }
-    stage('Archive') {
-      step {
-        script {
-          sh "cp dist/trainSchedule.zip /tmp"
+        stage('Archive') {
+          step {
+            script {
+              sh "cp dist/trainSchedule.zip /tmp"
+            }
+          }
         }
-      }
     }
 }
