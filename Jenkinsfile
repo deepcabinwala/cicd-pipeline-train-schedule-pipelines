@@ -4,14 +4,14 @@ pipeline {
     agent any
     stages {
         stage('Buid') {
-          step {
+          steps {
             script {
               sh "./gradlew build"
             }
           }
         }
         stage('Archive') {
-          step {
+          steps {
             script {
               sh "cp dist/trainSchedule.zip /tmp"
             }
