@@ -1,4 +1,4 @@
-stages {
+node {
   stage('Buid') {
     step {
       script {
