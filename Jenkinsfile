@@ -1,14 +1,16 @@
-stage('Buid') {
-  script {
+stages {
+  stage('Buid') {
     step {
-      sh "./gradlew build"
+      script {
+        sh "./gradlew build"
+      }
     }
   }
-}
-stage('Archive') {
-  script {
+  stage('Archive') {
     step {
-      sh "cp dist/trainSchedule.zip /tmp"
+      script {
+        sh "cp dist/trainSchedule.zip /tmp"
+      }
     }
   }
 }
